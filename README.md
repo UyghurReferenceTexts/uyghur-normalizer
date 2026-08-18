@@ -1,4 +1,5 @@
 # uyghur-normalizer
+[![DOI](https://zenodo.org/badge/1338525628.svg)](https://doi.org/10.5281/zenodo.22000836)
 
 Normalizes Uyghur text (Arabic script) to the 2009/2011 orthographic standard,
 and replaces terminology calqued from Chinese with Uyghur equivalents.

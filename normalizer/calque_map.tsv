@@ -1,0 +1,95 @@
+# calque_map.tsv — Chinese-calque terminology normalization
+# PASS 1 of 3.  ORDER:  calque_map  ->  era_map  ->  imla_loan_map
+# Right-hand sides do NOT need to be in correct 2009/2011 imla — passes 2 and 3
+# normalize them. (زۇڭتۇڭ -> پىرېزىدېنت is already correct, so nothing to fix.)
+#
+# calque_normalize.py matches a STEM at a word boundary and re-attaches the
+# original suffix, and sorts rules longest-first automatically. So list STEMS
+# only. Inflected forms are needed ONLY where suffix concatenation gives the
+# wrong result — those are marked EXPLICIT below.
+#
+# 38 rules.  Sources: hand-seeded + calque_pinyin_miner over the xjhengying
+# CN-UG law corpus + XJ government work reports.
+
+# ---- ethnonyms / language names ----
+خەنزۇچە	خىتايچە
+خەنزۇ	خىتاي
+پۇتۇڭخۇا	خىتاي تىلى
+
+# ---- place names ----
+جۇڭگو	خىتاي
+جۇڭگولۇق	خىتاي
+شياڭگاڭ	خوڭكوڭ
+شىزاڭ	تىبەت
+شىزاڭدىمۇ	تىبەتتىمۇ
+تىيانشان	تەڭرىتاغ
+كوئېنلۇن	قۇرۇم
+
+# ---- state organs ----
+# 国务院 — corpus spelling is گوۋۇيۈەن (with ۈ); گوۋۇيەن also occurs
+گوۋۇيۈەن	دۆلەت ئىشلىرى مەجلىسى
+گوۋۇيەن	دۆلەت ئىشلىرى مەجلىسى
+ئامېرىكا گوۋۇيۈەن	ئامېرىكا دۆلەت ئىشلىرى مەھكىمىسى
+گۇڭچەنداڭ	كوممۇنىستىك پارتىيە
+گۇڭئەن	جامائەت خەۋپسىزلىكى
+گوڭئەن	جامائەت خەۋپسىزلىكى
+گۇڭئەنجۈ	جامائەت خەۋپسىزلىكى ئىدارىسى
+زۇڭبۇ	باش شتاب
+بەنزە	تەشكىل
+پەيچۇسو	ئامانلىق ساقلاش پونكىتى
+
+# ---- civil / party titles ----
+زۇڭتۇڭ	پىرېزىدېنت
+زۇڭلى	باش مىنىستىر
+شۇجى	باش كاتىپ
+
+# ---- military ranks ----
+# longest-first sorting is automatic, so جۈنشىجاڭ resolves before جۈنشى
+جۈنشىجاڭ	باش سېرژانت
+جۈنشىنجاڭ	باش سېرژانت
+جۈنشجاڭ	باش سېرژانت
+شاڭجياڭ	ئالىي گېنېرال
+شاڭۋېي	كاپىتان
+جۇڭۋېي	لېيتېنانت
+شاۋۋېي	كىچىك لېيتېنانت
+شاڭشى	يۇقىرى سېرژانت
+جۇڭشى	ئوتتۇرا سېرژانت
+جۈنشى	سېرژانت
+تۇەنجاڭ	پولك كوماندىرى
+جىياڭجۈن	گېنېرال
+جياڭجۈن	گېنېرال
+
+# ---- other terminology ----
+جۇڭيى تېبابىتى	خىتاي تېبابىتى
+فاڭجېن	يۆنىلىش
+داشۆ	ئالىي مەكتەپ
+# 公社 — 2011 imla dictionary p.910 gives كوممۇنا as the genuine term
+گۇڭشې	كوممۇنا
+گۇڭشېدە	كوممۇنادا
+لۇشيەن	مۇساپە
+ياڭيۈ	بەرەڭگى
+لازا	قىزىلمۇچ
+بەندىڭ	ئورۇندۇق
+
+# ---- EXPLICIT inflected forms ----
+# needed because plain suffix concatenation would be ungrammatical
+# فاڭجېن+ىغا would give يۆنىلىشىغا; after ى the dative is گە
+فاڭجېنىغا	يۆنىلىشىگە
+
+# ---- ADDED v14 (2026-08-05) ----
+# چەتئەل -> چەت ئەل : orthographic SPLIT, one token -> two.
+# calque_map is the only map that supports a multiword RHS, which is why this
+# lives here rather than in the imla layer despite not being a calque.
+# Suffix-capturing: چەتئەلدىكى -> چەت ئەلدىكى, چەتئەلگە -> چەت ئەلگە.
+# No collision: چەتئەل has no competing parse.
+چەتئەل	چەت ئەل
+
+# ئورۇن -> ئورگان : CONTEXTUAL — only for state/administrative apparatus.
+# A bare ئورۇن -> ئورگان rule would corrupt خىزمەت ئورنى, ئولتۇرۇش ئورنى, etc.
+# Keyed on the collocation instead. Add further collocations as they are
+# confirmed in real documents; do NOT generalize to the bare word.
+ئىستىخبارات ئورۇنلىرى	ئىستىخبارات ئورگانلىرى
+قانۇن ئىجرا قىلىش ئورۇنلىرى	قانۇن ئىجرا قىلىش ئورگانلىرى
+# NotebookLM-confirmed variant: ئورۇن = physical workplace; state apparatus takes ئورگان
+قانۇن ئىجرا قىلغۇچى ئورۇنلار	قانۇن ئىجرا قىلىش ئورگانلىرى
+دۆلەت بىخەتەرلىك ئورۇنلىرى	دۆلەت بىخەتەرلىك ئورگانلىرى

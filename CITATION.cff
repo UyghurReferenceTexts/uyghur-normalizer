@@ -2,9 +2,11 @@ cff-version: 1.2.0
 version: 1.0.1
 doi: "10.5281/zenodo.22000836"
 date-released: "2026-08-18"
-title: "uyghur-normalizer: 2009/2011 imla orthographic and de-calquing normalization for Uyghur"
+title: "uyghur-normalizer: 2009 imla orthographic and de-calquing normalization for Uyghur"
 message: "If you use this software or its map data, please cite it."
 type: software
+# Author is an entity with `name:` — Zenodo's CFF parser does not accept
+# a person with only `alias:`, and fails silently (release publishes, no DOI).
 authors:
   - name: UyghurReferenceTexts
     website: "https://github.com/UyghurReferenceTexts"
@@ -12,7 +14,7 @@ repository-code: "https://github.com/UyghurReferenceTexts/uyghur-normalizer"
 abstract: >-
   A dependency-free normalizer for Uyghur text in the Arabic script. Applies
   three ordered passes: terminology calqued from Chinese, pre-2009 spellings,
-  and loanword shape under the 2009/2011 orthographic reform. Suffixes are
+  and loanword shape under the 2009 orthographic reform. Suffixes are
   re-derived against the replacement with vowel harmony, voicing assimilation
   and raising, and the tool declines rather than guesses where the derivation
   is not safe. Includes the map data, arbitrated word by word against the 2009

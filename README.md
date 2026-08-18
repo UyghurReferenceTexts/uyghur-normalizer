@@ -1,6 +1,5 @@
 # uyghur-normalizer
-[![DOI](https://zenodo.org/badge/1338525628.svg)](https://doi.org/10.5281/zenodo.22000836)
-[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/UyghurReferenceTexts/uyghur-normalizer/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/UyghurReferenceTexts/uyghur-normalizer)
+[![DOI](https://zenodo.org/badge/1338525628.svg)](https://doi.org/10.5281/zenodo.22000836) [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/UyghurReferenceTexts/uyghur-normalizer/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/UyghurReferenceTexts/uyghur-normalizer)
 
 Normalizes Uyghur text (Arabic script) to the 2009/2011 orthographic standard,
 and replaces terminology calqued from Chinese with Uyghur equivalents.

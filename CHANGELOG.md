@@ -21,6 +21,9 @@ section of the README for the four reference works and their short numbers.
 
 First public release.
 
+Source numbers [1]–[4] refer to the four reference works listed under
+[Sources](../../#sources) in the README.
+
 ### Added
 
 - `uyghur_normalizer.py` — three ordered passes (calque → era → imla_loan) with
@@ -34,9 +37,9 @@ First public release.
 - `check_new_rules.py` — vets a batch of proposed rules against the existing
   maps and against itself before anything is appended.
 - `normalizer/calque_map.tsv` — 51 rules.
-- `normalizer/era_map.tsv` — 1,245 rules. Pre-2009 `ىيى` forms to the 2009
-  `ىيە` standard. 163 confirmed directly against [4], 1,082 by class rule,
-  5 exceptions recorded where [4] mapped toward `ى`.
+- `normalizer/era_map.tsv` — 1,245 rules. Pre-2009 `ىيى`‎ forms brought to the
+  2009 `ىيە`‎ standard: 163 confirmed directly against [4], 1,082 by class
+  rule, and 5 exceptions recorded where [4] mapped toward `ى`‎.
 - `normalizer/imla_loan_map.tsv` — 873 rules. Loanword shape per the rule prose
   of [4] §V.3 (hiatus) and §IX.2.1–4 (initial clusters), arbitrated word by word
   against [1] and [2]. The example word lists inside the rule prose carry
@@ -50,10 +53,10 @@ First public release.
 
 ### Not included
 
-- `كىڭستون → كىڭستوۋن` (Kingstown) was dropped from the 2026-08-17 batch. The
-  2009 spelling of Kingston is identical to the 2006 spelling of Kingstown, so
-  the rule would corrupt every correctly-spelled Kingston. `كىنگستون → كىڭستون`
-  is kept. Caught by the idempotence test.
+- Kingstown, `كىڭستون → كىڭستوۋن`‎, was dropped from the 2026-08-17 batch.
+  The 2009 spelling of Kingston is identical to the 2006 spelling of Kingstown,
+  so the rule would corrupt every correctly-spelled Kingston. Kingston,
+  `كىنگستون → كىڭستون`‎, is kept. Caught by the idempotence test.
 - Terminology preferences among forms that are all attested. The Cold War is
   written at least three ways in published Uyghur, and choosing between them is
   an editorial act, not a correction.

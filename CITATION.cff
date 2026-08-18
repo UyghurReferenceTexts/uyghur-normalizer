@@ -3,7 +3,7 @@ title: "uyghur-normalizer: 2009/2011 imla orthographic and de-calquing normaliza
 message: "If you use this software or its map data, please cite it."
 type: software
 authors:
-  - alias: UyghurReferenceTexts
+  - name: UyghurReferenceTexts
     website: "https://github.com/UyghurReferenceTexts"
 repository-code: "https://github.com/UyghurReferenceTexts/uyghur-normalizer"
 abstract: >-
@@ -12,8 +12,10 @@ abstract: >-
   and loanword shape under the 2009/2011 orthographic reform. Suffixes are
   re-derived against the replacement with vowel harmony, voicing assimilation
   and raising, and the tool declines rather than guesses where the derivation
-  is not safe. Includes the map data, arbitrated word by word against the 2011
-  imla dictionary of the Milletler Til-Yeziq Komiteti.
+  is not safe. Includes the map data, arbitrated word by word against the 2009
+  Hazirqi zaman Uyghur edebiy tilining imla lughiti dictionary of the Milletler
+  Til-Yeziq Komiteti and 2011 Hazirqi zaman Uyghur tilining izahliq lughiti
+  (qisqartilmisi). 
 keywords:
   - Uyghur
   - orthography
@@ -23,5 +25,5 @@ keywords:
   - machine translation
 license: MIT
 license-url: "https://github.com/UyghurReferenceTexts/uyghur-normalizer/blob/main/LICENSE"
-version: 1.0.0
-date-released: "2026-08-17"
+version: 1.0.1
+date-released: "2026-08-18"

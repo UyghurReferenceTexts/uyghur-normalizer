@@ -1,0 +1,8 @@
+# Sample input. Every line here is deliberately non-standard.
+# Run: python uyghur_normalize.py --in examples/sample_in.txt
+
+جۇڭگودا ۋە شىزاڭدا ئېلىپ بېرىلغان تەكشۈرۈش.
+زۇڭتۇڭلار ۋە زۇڭتۇڭقا يېزىلغان خەت.
+داشۆگە بارىمەن، گۇڭشېدە ئىشلىدىم.
+پارتىيىسىنىڭ پوزىتسىيىسى ۋە ئارمىيىسى.
+فرانسىيە، شۋېيتسارىيە، پروگرامما، ستالىن، ۋيېتنام.

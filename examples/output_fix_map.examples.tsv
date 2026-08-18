@@ -1,0 +1,45 @@
+# output_fix_map.tsv — OUTPUT-SIDE ONLY. Never used by build_vNN.py.
+#
+# These are forms the MODEL INVENTS. They do not appear in the training corpus,
+# so they cannot be fixed by a build-side map and must not be added to
+# calque_map.tsv — doing so would make the corpus compliance check report
+# violations for forms that were never there.
+#
+# Established by the v13 sweep: a rule was in calque_map.tsv, corpus compliance
+# was 100.0% (zero occurrences), and every checkpoint still emitted the wrong
+# form anyway. See v13_provenance.md §3.
+#
+# 2026-08-17 — the Cold War rules were REMOVED from this file. All three forms
+# (سوغۇق ئۇرۇش، سوغۇق مۇناسىۋەتلەر ئۇرۇشى، سوغۇقچىلىق ئۇرۇشى) turned out to be
+# attested in published Uyghur; that is register variation among valid synonyms,
+# not a calque, and a normalizer has no business picking between them. Variant
+# preference belongs in the eval synonym map, not here.
+#
+# NOT loaded by default. Pass it explicitly:
+#     python uyghur_normalize.py --in out.txt --fix-map normalizer/output_fix_map.tsv
+#
+# Format: variant<TAB>standard[<TAB>flags]. Longest LHS wins. Suffix-aware.
+# Applied AFTER calque/era/imla_loan, so right-hand sides must already be in
+# correct 2009/2011 imla — nothing runs after this pass to clean them.
+#
+# FLAGS
+#   nosfx   fire only on the bare form. Use when the replacement is ALREADY
+#           inflected, so appending a captured suffix would double it.
+#
+# EVIDENCE COLUMN: only add a rule here after seeing the form in actual model
+# output. Do not add speculatively.
+
+# ---- fault line ----
+# v13 ep8 -9.3 chrF. Model produces two competing literal calques.
+پارچىلىنىش لىنىيەسى	ئۈزۈك سەپ
+پارچىلىنىش سىزىقى	ئۈزۈك سەپ
+يېرىق سىزىقى	ئۈزۈك سەپ
+
+# ---- nation state ----
+# v13 ep8 -13.1 chrF, the single largest regression. Number-agreement error:
+# the model collapses the plural to a singular possessive compound.
+# NOTE: singular «مىللىي دۆلەت» is correct where the English IS singular.
+# This rule assumes the plural, which is the attested failure. If you see it
+# fire on a genuine singular, narrow it or remove it.
+# nosfx: the replacement is already plural; a captured suffix would stack on it.
+مىللەت دۆلىتى	مىللىي دۆلەتلەر	nosfx

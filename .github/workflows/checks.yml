@@ -1,0 +1,23 @@
+name: checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Scan the sample file (must not crash, must change something)
+        run: |
+          python uyghur_normalizer.py --in examples/sample_in.txt

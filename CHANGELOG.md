@@ -15,10 +15,13 @@ section of the README for the four reference works and their short numbers.
 
 ---
 
-## [Unreleased]
+## [1.1.0] — unreleased
+
+## [1.0.1] — 2026-08-18
+DOI: [10.5281/zenodo.22000837](https://doi.org/10.5281/zenodo.22000837)
 
 ## [1.0.0] — 2026-08-18
-DOI: [10.5281/zenodo.22000837](https://doi.org/10.5281/zenodo.22000837)
+Not archived — the release predates Zenodo integration.
 
 First public release.
 

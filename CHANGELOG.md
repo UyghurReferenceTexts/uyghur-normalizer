@@ -17,16 +17,52 @@ section of the README for the four reference works and their short numbers.
 
 ## [1.1.0] — unreleased
 
-## [1.0.1] — 2026-08-18
-DOI: [10.5281/zenodo.22000837](https://doi.org/10.5281/zenodo.22000837)
+### Added
+
+- Two map invariants, enforced in CI:
+  - a replacement may not begin with its own variant unless the rule carries
+    `nosfx`;
+  - a variant may not start with a character that cannot begin a Uyghur word.
+- `check_new_rules.py` reports the same two conditions as `PREFIX` and
+  `UNFIREABLE`.
+
+### Changed
+
+- The `لۇشيەن`‎ → `مۇساپە`‎ rule in `normalizer/calque_map.tsv` now
+  carries the `raise` flag. **This changes output.** `مۇساپە`‎ is an ordinary
+  `ە`‎-final noun, so its final vowel raises before a suffix. Suffixed
+  forms now normalize to `مۇساپىسى`‎ and `مۇساپىدە`‎, where 1.0.x
+  produced `مۇساپەسى`‎ and `مۇساپەدە`‎. The 1.0.x forms were wrong.
+- The declined-matches report no longer tells you to add a map entry for
+  `nosfx` skips, which are working as intended.
+
+### Fixed
+
+- `normalizer/imla_loan_map.tsv` — 873 rules to 871.
+  - Vienna: `ۋىيېنا`‎ → `ۋيېننا`‎ corrected to `ۋىيېنا`‎ →
+    `ۋىيېننا`‎. **This changes output.** The replacement had lost its
+    `ى`‎, which made it the only rule in the map running against the
+    epenthesis direction of §IX.2 — compare `ۋيېتنام`‎ →
+    `ۋىيېتنام`‎, which inserts the same vowel. Checked against the source
+    image: the post-2009 form is `ۋىيېننا`‎, the pre-2009 form
+    `ۋىيېنا`‎. A transcription error, not a rule.
+  - Kingstown-class defect: `لۇئاند`‎ → `لۇئاندا`‎ and
+    `مالابو`‎ → `مالابوئا`‎ now carry `nosfx`. In both, the variant is
+    a prefix of its own replacement, so every already-correct occurrence looked
+    like the variant plus a suffix. The suffix engine declined rather than
+    corrupting them, which is how they were found.
+  - Removed `مىچىسى`‎ → `مچىسى`‎ and `ڭىنىڭ`‎ → `ڭنىڭ`‎.
+    Neither variant is a word; both are extraction fragments. The second could
+    never fire, as no Uyghur word begins with `ڭ`‎.
+
+### Upgrading
+
+Output changes for suffixed `لۇشيەن`‎ and for `ۋىيېنا`‎. If you
+normalized a corpus with 1.0.0 or 1.0.1, re-run it.
 
 ## [1.0.0] — 2026-08-18
-Not archived — the release predates Zenodo integration.
 
 First public release.
-
-Source numbers [1]–[4] refer to the four reference works listed under
-[Sources](../../#sources) in the README.
 
 ### Added
 
@@ -41,9 +77,9 @@ Source numbers [1]–[4] refer to the four reference works listed under
 - `check_new_rules.py` — vets a batch of proposed rules against the existing
   maps and against itself before anything is appended.
 - `normalizer/calque_map.tsv` — 51 rules.
-- `normalizer/era_map.tsv` — 1,245 rules. Pre-2009 `ىيى`‎ forms brought to the
-  2009 `ىيە`‎ standard: 163 confirmed directly against [4], 1,082 by class
-  rule, and 5 exceptions recorded where [4] mapped toward `ى`‎.
+- `normalizer/era_map.tsv` — 1,245 rules. Pre-2009 `ىيى` forms to the 2009
+  `ىيە` standard. 163 confirmed directly against [4], 1,082 by class rule,
+  5 exceptions recorded where [4] mapped toward `ى`.
 - `normalizer/imla_loan_map.tsv` — 873 rules. Loanword shape per the rule prose
   of [4] §V.3 (hiatus) and §IX.2.1–4 (initial clusters), arbitrated word by word
   against [1] and [2]. The example word lists inside the rule prose carry
@@ -57,10 +93,10 @@ Source numbers [1]–[4] refer to the four reference works listed under
 
 ### Not included
 
-- Kingstown, `كىڭستون → كىڭستوۋن`‎, was dropped from the 2026-08-17 batch.
-  The 2009 spelling of Kingston is identical to the 2006 spelling of Kingstown,
-  so the rule would corrupt every correctly-spelled Kingston. Kingston,
-  `كىنگستون → كىڭستون`‎, is kept. Caught by the idempotence test.
+- `كىڭستون → كىڭستوۋن` (Kingstown) was dropped from the 2026-08-17 batch. The
+  2009 spelling of Kingston is identical to the 2006 spelling of Kingstown, so
+  the rule would corrupt every correctly-spelled Kingston. `كىنگستون → كىڭستون`
+  is kept. Caught by the idempotence test.
 - Terminology preferences among forms that are all attested. The Cold War is
   written at least three ways in published Uyghur, and choosing between them is
   an editorial act, not a correction.

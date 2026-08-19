@@ -84,7 +84,7 @@ import sys
 import unicodedata
 from collections import Counter, OrderedDict
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 # ---------------------------------------------------------------------------
 # Character classes
@@ -603,7 +603,13 @@ def main():
     if rep.skipped:
         print(f'\n[declined] {rep.skipped} match(es) left untouched — the suffix could '
               f'not be re-derived safely.')
-        print('           Add an explicit inflected entry to the map for each of these.')
+        by_design = sum(n for (_l, _r, _lb, _s, why), n in rep.skips.items()
+                        if why.startswith('nosfx'))
+        if by_design < rep.skipped:
+            print('           Some need an explicit inflected entry in the map.')
+        if by_design:
+            print(f'           {by_design} of these are nosfx rules working as '
+                  f'intended — no action needed.')
         for (lhs, rhs, label, sfx, why), n in sorted(rep.skips.items(), key=lambda x: -x[1]):
             print(f'    {n:5}  {lhs}+{sfx}   ({label}: {why})')
 

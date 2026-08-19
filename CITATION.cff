@@ -1,7 +1,4 @@
 cff-version: 1.2.0
-version: 1.0.1
-doi: "10.5281/zenodo.22000836"
-date-released: "2026-08-18"
 title: "uyghur-normalizer: 2009 imla orthographic and de-calquing normalization for Uyghur"
 message: "If you use this software or its map data, please cite it."
 type: software
@@ -20,7 +17,7 @@ abstract: >-
   is not safe. Includes the map data, arbitrated word by word against the 2009
   Hazirqi zaman Uyghur edebiy tilining imla lughiti dictionary of the Milletler
   Til-Yeziq Komiteti and 2011 Hazirqi zaman Uyghur tilining izahliq lughiti
-  (qisqartilmisi). 
+  (qisqartilmisi).
 keywords:
   - Uyghur
   - orthography
@@ -28,7 +25,9 @@ keywords:
   - text normalization
   - low-resource languages
   - machine translation
+  - linguistics
 license: MIT
 license-url: "https://github.com/UyghurReferenceTexts/uyghur-normalizer/blob/main/LICENSE"
-version: 1.0.1
-date-released: "2026-08-18"
+doi: "10.5281/zenodo.22000836"
+version: 1.1.0
+date-released: "2026-08-19"

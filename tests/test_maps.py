@@ -97,6 +97,37 @@ class TestMapIntegrity(unittest.TestCase):
                 self.assertEqual(sorted(lhs & rhs), [],
                                  f'{m} rewrites into its own left-hand side')
 
+    def test_no_rule_is_a_prefix_of_its_own_replacement(self):
+        """If the replacement starts with the variant, then every ALREADY
+        CORRECT occurrence looks like the variant plus a suffix, and the rule
+        fires on text that was already right. لۇئاند -> لۇئاندا matches the
+        correct لۇئاندا with ا captured as a suffix.
+
+        Such a rule must carry `nosfx` so it only fires on the bare form.
+        """
+        for m in MAPS:
+            for lhs, rhs, _lb, flags in rules(m):
+                if rhs.startswith(lhs) and rhs != lhs:
+                    with self.subTest(map=m, rule=lhs):
+                        self.assertIn(
+                            'nosfx', flags,
+                            f'{m}: {lhs} -> {rhs} needs the nosfx flag; the '
+                            f'replacement begins with the variant')
+
+    def test_left_hand_sides_can_occur_word_initially(self):
+        """Rules only fire at a word boundary, so a variant that cannot begin
+        a Uyghur word is dead. In practice such entries are extraction
+        fragments rather than words: no Uyghur word starts with ڭ, and a
+        word-initial vowel always carries ئ."""
+        impossible = set('ڭاەېوۆۈۇى')
+        for m in MAPS:
+            for lhs, rhs, _lb, _f in rules(m):
+                with self.subTest(map=m, rule=lhs):
+                    self.assertNotIn(
+                        lhs[0], impossible,
+                        f'{m}: {lhs} -> {rhs} can never match; no Uyghur word '
+                        f'begins with {lhs[0]!r}')
+
     def test_flags_are_recognised(self):
         for m in MAPS:
             for lhs, _rhs, _lb, flags in rules(m):

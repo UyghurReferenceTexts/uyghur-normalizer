@@ -11,7 +11,7 @@
 # 38 rules.  Sources: hand-seeded + calque_pinyin_miner over the xjhengying
 # CN-UG law corpus + XJ government work reports.
 
-# ---- ethnonyms / language names ----
+# ---- ethnonyms or language names ----
 خەنزۇچە	خىتايچە
 خەنزۇ	خىتاي
 پۇتۇڭخۇا	خىتاي تىلى
@@ -38,7 +38,7 @@
 بەنزە	تەشكىل
 پەيچۇسو	ئامانلىق ساقلاش پونكىتى
 
-# ---- civil / party titles ----
+# ---- civil or party titles ----
 زۇڭتۇڭ	پىرېزىدېنت
 زۇڭلى	باش مىنىستىر
 شۇجى	باش كاتىپ
@@ -66,7 +66,9 @@
 # 公社 — 2011 imla dictionary p.910 gives كوممۇنا as the genuine term
 گۇڭشې	كوممۇنا
 گۇڭشېدە	كوممۇنادا
-لۇشيەن	مۇساپە
+# `raise`: مۇساپە is an ordinary ە-final noun, so the final vowel raises to ى
+# before a suffix (مۇساپىسى، مۇساپىدە). Not the ـىيە class, which must NOT raise.
+لۇشيەن	مۇساپە	raise
 ياڭيۈ	بەرەڭگى
 لازا	قىزىلمۇچ
 بەندىڭ	ئورۇندۇق

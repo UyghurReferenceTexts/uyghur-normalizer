@@ -5,8 +5,22 @@
 # The dictionary outranks the rule prose. The example word-lists
 # inside the qaidisi carry transcription noise and were NOT used.
 # SEPARATE FROM era_map.tsv. ORDER: calque -> era -> imla_loan.
-# 873 rules (769 + 95 on 2026-08-17 + 9 on 2026-08-18) | classes: {'B': 195, 'A3': 162, 'A': 193, 'F': 71, 'W': 18, 'A4': 82, 'A?': 26, 'A2': 17, 'SEED': 9}
-# variant<TAB>standard
+# 871 rules (769 + 95 on 2026-08-17 + 9 on 2026-08-18 - 2 on 2026-08-19) | classes: {'B': 195, 'A3': 162, 'A': 193, 'F': 71, 'W': 18, 'A4': 82, 'A?': 26, 'A2': 17, 'SEED': 9}
+# variant<TAB>standard[<TAB>flags]
+#
+# 2026-08-19 corrections:
+#  - REMOVED  مىچىسى -> مچىسى  and  ڭىنىڭ -> ڭنىڭ. Neither left-hand side is
+#    a word; both are extraction fragments. ڭىنىڭ could never fire in any
+#    case, as no Uyghur word begins with ڭ.
+#  - FLAGGED nosfx  لۇئاند -> لۇئاندا  and  مالابو -> مالابوئا. In both, the
+#    left-hand side is a prefix of its own replacement, so every ALREADY
+#    CORRECT instance looks like the old form plus a suffix. Without the flag
+#    the rule fires on correct text.
+#  - CORRECTED  ۋىيېنا -> ۋيېننا  to  ۋىيېنا -> ۋىيېننا. The replacement had
+#    lost its ى, which made it the only rule in this map running AGAINST the
+#    epenthesis direction of §IX.2 (compare ۋيېتنام -> ۋىيېتنام, which inserts
+#    the same vowel). Verified against the source image: the post-2009 form is
+#    ۋىيېننا and the pre-2009 form is ۋىيېنا. Transcription error, not a rule.
 ئىنتېرناتسىئونالىزملىق	ئىنتېرناتسىيونالىزملىق
 ئىنتېرناتسىئونالىستلار	ئىنتېرناتسىيونالىستلار
 ئاپتوبىبلىئوگرافىيە	ئاپتوبىبلىيوگرافىيە
@@ -630,7 +644,6 @@
 كىرىزس	كىرىزىس
 كۋارتس	كىۋارتس
 مبوندۇ	مىبوندۇ
-مىچىسى	مچىسى
 ميۇئون	مىيۇئون
 نيۇتون	نىيۇتون
 پراجنا	پىراجنا
@@ -716,7 +729,6 @@
 پسخول	پىسخول
 پسخىك	پىسخىك
 چچىنى	چىچىنى
-ڭىنىڭ	ڭنىڭ
 گبایا	گىبایا
 گروزن	گىروزن
 ۋراچى	ۋىراچى
@@ -847,11 +859,11 @@
 لىلونكۋي	لىلونگۋې
 لىچتېنستېيىن	لىچتېنشتېين
 ليۇبليانا	لىيۇبلىيانا
-لۇئاند	لۇئاندا
+لۇئاند	لۇئاندا	nosfx
 مادرىت	مادرىد
 ماسېرو	ماسېرۇ
 ماكېدونيە	ماكېدونىيە
-مالابو	مالابوئا
+مالابو	مالابوئا	nosfx
 مالايسىيا	مالايشىيا
 مايۇرو	ماجۇرو
 ماۋرتىئۇس	ماۋرىتىئۇس
@@ -875,7 +887,7 @@
 گۋادېلۇپ	گىۋادېلۇپ
 گۋىنېيە	گىۋىنېيە
 ھامىلىتون	ھامىلتون
-ۋىيېنا	ۋيېننا
+ۋىيېنا	ۋىيېننا
 ۋېللىمىستاد	ۋىللېمستاد
 ۋېللىنگتون	ۋېللىڭتون
 ۋېنتىيان	ۋىيېنتيان

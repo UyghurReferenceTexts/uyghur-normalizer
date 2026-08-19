@@ -15,8 +15,8 @@ section of the README for the four reference works and their short numbers.
 
 ---
 
-## [1.1.0] — unreleased
-
+## [1.1.0] — 2026-08-19
+DOI: [10.5281/zenodo.22011316]
 ### Added
 
 - Two map invariants, enforced in CI:

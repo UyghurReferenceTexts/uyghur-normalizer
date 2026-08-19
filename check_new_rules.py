@@ -29,6 +29,11 @@ REASON CODES (worst first; a row gets the first that applies)
                change, not an orthographic one, and belongs in a different map.
   SUBSTRING    this LHS is contained in another LHS. Longest-first ordering
                handles it, but check that the shorter rule is not over-broad.
+  PREFIX       the replacement STARTS WITH the variant, so every already
+               correct occurrence looks like the variant plus a suffix and the
+               rule fires on text that was already right. Needs `nosfx`.
+  UNFIREABLE   the variant cannot begin a Uyghur word, so the rule can never
+               match. Usually an extraction fragment rather than a word.
   SHORT        LHS <= --min-len characters. Short literals over-match.
   HYGIENE      stray whitespace or non-NFC codepoints in the cell.
   OK           safe to append.
@@ -184,6 +189,10 @@ def main():
             reasons.append(f'DUP_IN_SHEET:x{seen[a]}')
         if a and b and len(a.split()) != len(b.split()):
             reasons.append('NAMING:word count differs')
+        if a and b and b.startswith(a) and b != a:
+            reasons.append('PREFIX:replacement begins with the variant — needs nosfx')
+        if a and a[0] in 'ڭاەېوۆۈۇى':
+            reasons.append(f'UNFIREABLE:no Uyghur word begins with {a[0]!r}')
         if a in contained:
             reasons.append('SUBSTRING')
         if a and len(a) <= args.min_len:
@@ -192,8 +201,9 @@ def main():
             reasons.append('HYGIENE:whitespace/NFC')
         r['reasons'] = reasons
 
-    order = ['REVERSE', 'CONFLICT', 'CHAIN', 'DUPLICATE', 'DUP_IN_SHEET',
-             'NAMING', 'SUBSTRING', 'SHORT', 'HYGIENE']
+    order = ['REVERSE', 'CONFLICT', 'CHAIN', 'PREFIX', 'UNFIREABLE',
+             'DUPLICATE', 'DUP_IN_SHEET', 'NAMING', 'SUBSTRING', 'SHORT',
+             'HYGIENE']
 
     def worst(r):
         for k in order:

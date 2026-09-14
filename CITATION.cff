@@ -5,6 +5,9 @@ type: software
 # Author is an entity with `name:` — Zenodo's CFF parser does not accept
 # a person with only `alias:`, and fails silently (release publishes, no DOI).
 authors:
+  - given-names: UyghurReferenceTexts
+    family-names: East Turkistan
+    orcid: "https://orcid.org/0009-0004-4633-0408"
   - name: UyghurReferenceTexts
     website: "https://github.com/UyghurReferenceTexts"
 repository-code: "https://github.com/UyghurReferenceTexts/uyghur-normalizer"

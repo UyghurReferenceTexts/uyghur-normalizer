@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
-Normalizes Uyghur text (Arabic script) to the 2009 orthographic standard,
+Normalizes Uyghur (ئۇيغۇر) text to the 2009 orthographic standard,
 and replaces terminology calqued from Chinese with Uyghur equivalents.
 
 Two files, no dependencies, no network. Python 3.9+.
@@ -197,7 +197,7 @@ useful thing a tool can do is find them before a human does.
 Plain text, `.jsonl` (rewrites `translation.ug`), and `EN:` / `UG:` benchmark
 blocks (only `UG:` lines are touched) are detected automatically.
 
-Arabic presentation forms are folded and text is NFC-normalized on load, so
+Uyghur (ئۇيغۇر) presentation forms are folded and text is NFC-normalized on load, so
 badly-encoded OCR output still matches.
 
 ---

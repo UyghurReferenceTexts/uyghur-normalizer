@@ -20,9 +20,9 @@ from uyghur_normalizer import (  # noqa: E402
     load_map, process_text, build_pattern, Report,
 )
 
-MAPS = ['calque_map.tsv', 'era_map.tsv', 'imla_loan_map.tsv']
+MAPS = ['usage_map.tsv', 'calque_map.tsv', 'era_map.tsv', 'imla_loan_map.tsv']
 MAP_DIR = os.path.join(ROOT, 'normalizer')
-PASS_ORDER = MAPS  # calque -> era -> imla_loan; this order is load-bearing
+PASS_ORDER = MAPS  # usage -> calque -> era -> imla_loan; this order is load-bearing
 
 
 def raw_lines(name):

@@ -1,0 +1,13 @@
+# lexicon_exceptions.tsv — forms that look like a map variant but are printed so
+# in the dictionaries, checked against the scan. The orthographic passes must
+# leave every form listed here unchanged.
+#
+#   kind = exception   a genuine lexical exception to an imla rule
+#          accepted    a verified headword that differs from the 2009 word list
+#                      [4]; the map follows [4] and the test skips this form
+#
+# Every line needs a verified row and a scan reference.
+form	kind	row_id	scan	note
+تەكىيىسىمان	exception	2009 D_08661; 2011 D01-08884	187_col3.png; 281_2L.png	The stem تەكىيە raises before every suffix (2011 also prints تەكىيىلىك and تەكىيىگە), against the general ‑ىيە pattern.
+تەكىيىلىك	exception	2011 D01-08885	281_2L.png	As above.
+كاربيۇراتور	exception	2009 D_23705	523_col1.png	Word-internal بيۇ stays; §IX.2 epenthesis applies to initial clusters only (compare كومپيۇتېر). The 1997 English–Uyghur dictionary prints كاربيوراتور.

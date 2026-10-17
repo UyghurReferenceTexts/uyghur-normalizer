@@ -5,8 +5,25 @@
 # The dictionary outranks the rule prose. The example word-lists
 # inside the qaidisi carry transcription noise and were NOT used.
 # SEPARATE FROM era_map.tsv. ORDER: calque -> era -> imla_loan.
-# 871 rules (769 + 95 on 2026-08-17 + 9 on 2026-08-18 - 2 on 2026-08-19) | classes: {'B': 195, 'A3': 162, 'A': 193, 'F': 71, 'W': 18, 'A4': 82, 'A?': 26, 'A2': 17, 'SEED': 9}
+# 867 rules (769 + 95 on 2026-08-17 + 9 on 2026-08-18 - 2 on 2026-08-19 - 5 + 1 on 2026-10-17) | classes: {'B': 195, 'A3': 162, 'A': 193, 'F': 71, 'W': 18, 'A4': 82, 'A?': 26, 'A2': 17, 'SEED': 9}
 # variant<TAB>standard[<TAB>flags]
+#
+# 2026-10-17 corrections — checked against the audited headword lists
+#  (verified rows of the 2009 imla dictionary and the 2011 izahliq lughet):
+#  - REMOVED  رادىئۇ -> رادىيو. رادىئۇ is not a spelling of radio in any of
+#    the three dictionaries; every word that begins with it is radius
+#    (رادىئۇس, 2009 D_15644). The rule turned رادىئۇس into رادىيوس.
+#  - REMOVED  رادىيۇ -> رادىيو, for the same reason: رادىيۇ is never radio
+#    in the dictionaries, and the rule turned رادىيۇس (radius) into رادىيوس.
+#  - REMOVED  ئاستانە -> ئاستانا. ئاستانە is an ordinary word (2009 D_00891,
+#    2011 D01-21640). Kingston-class collision with the capital ئاستانا.
+#  - REMOVED  نىئوبىي -> نىيوبىي  and  پاترىئارخال -> پاترىيارخال. The 2011
+#    dictionary prints the ئ form (D02-10355, D01-05516/05517, checked
+#    against the scans); the 2009 word list does not list either word.
+#  - CORRECTED  سلوۋاكيە -> سلوۋاكىيە  to  -> سىلوۋاكىيە. The replacement
+#    kept the initial cluster that §IX.2 breaks up (cf. سلوۋاك -> سىلوۋاك).
+#  - ADDED  گرېتسىيە -> گىرېتسىيە. Bare and suffixed forms of Greece were
+#    left alone; only گرېتسىيەدىكى and گىرىتسىيە were covered.
 #
 # 2026-08-19 corrections:
 #  - REMOVED  مىچىسى -> مچىسى  and  ڭىنىڭ -> ڭنىڭ. Neither left-hand side is
@@ -205,7 +222,6 @@
 كرىستاللىرى	كىرىستاللىرى
 مۇداپىيەسىز	مۇداپىئەسىز
 مۇددىيانامە	مۇددىئانامە
-پاترىئارخال	پاترىيارخال
 پتېروكارىيە	پىتېروكارىيە
 پروتاكتىنىي	پىروتاكتىنىي
 پروتوپلازما	پىروتوپلازما
@@ -542,7 +558,6 @@
 مۇددىيا	مۇددىئا
 نجاتلىق	نىجاتلىق
 ندېبېلى	نىدېبېلى
-نىئوبىي	نىيوبىي
 يۇلىئان	يۇلىيان
 پاۋىئان	پاۋىيان
 پرامىدا	پىرامىدا
@@ -594,8 +609,6 @@
 دراۋىد	دىراۋىد
 دىئولا	دىيولا
 رادىئو	رادىيو
-رادىئۇ	رادىيو
-رادىيۇ	رادىيو
 رىيايە	رىئايە
 ستاتور	ئىستاتور
 ستاتىك	ئىستاتىك
@@ -798,7 +811,6 @@
 # is identical to the 2006 spelling of Kingstown, so that rule would
 # corrupt every correct Kingston. كىنگستون -> كىڭستون is kept.
 ئادامستون	ئادامستوۋن
-ئاستانە	ئاستانا
 ئاسۇنسئون	ئاسۇنسىيون
 ئامىستېردام	ئامستېردام
 ئاندورا	ئاندوررا
@@ -841,7 +853,7 @@
 ساۋ تومې - پرنسپې	سان تومې ۋە پىرىنسىپى
 ستكھولم	سىتوكھولم
 سكوپلى	سىكوپژې
-سلوۋاكيە	سلوۋاكىيە
+سلوۋاكيە	سىلوۋاكىيە
 سۈرىيە	سۇرىيە
 سۋېزىلاند	سىۋېزىلاند
 شۋېتسىيە	شىۋېتسىيە
@@ -884,6 +896,7 @@
 گودتخاب	گوتخاب
 گوللاندىيىگە قاراشلىق ئانتىلېس	گوللاندىيەگە قاراشلىق ئانتىللېس
 گىرىتسىيە	گىرېتسىيە
+گرېتسىيە	گىرېتسىيە
 گۋادېلۇپ	گىۋادېلۇپ
 گۋىنېيە	گىۋىنېيە
 ھامىلىتون	ھامىلتون

@@ -1,0 +1,5 @@
+# usage_target_overrides.tsv — usage rules whose correct form is taken from
+# [4] or [1] instead of [2], decided against the scan. Read by
+# tools/build_usage_map.py; one line per rule.
+variant	target	evidence	reason
+چىڭگىلىماچ	جىڭگىلىماچ	[1] D01-12151, 390_2L.png, verified	[2] D90-2-08165 prints جىڭگىلماچ, correct before the 2009 reform; [1] prints the 2009 form.

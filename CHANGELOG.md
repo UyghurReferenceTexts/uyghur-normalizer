@@ -15,8 +15,89 @@ section of the README for the four reference works and their short numbers.
 
 ---
 
+## [2.0.0] — 2026-10-17
+
+Rules checked against the audited headword lists of [4] and [1]. Only rows
+verified by hand against the scan were used as evidence; row ids and scan
+images are given so each decision can be re-checked.
+
+MAJOR because rules were withdrawn and one target changed (see Changed and
+Removed): text those rules rewrote under the previous release is now left as
+written or comes out differently.
+
+### Added
+
+- Opt-in **usage pass** (pass 0, `--usage`; override with `--usage-map`):
+  common misuses to their correct form, e.g. `ئاپارات`‎ → `ئاپپارات`‎.
+  Off by default: it corrects word choice rather than spelling, and would also
+  change regional or literary forms used on purpose. It runs before the calque
+  pass, so a pre-2009 spelling in a replacement is corrected by the era and
+  loan passes (`گىراپا`‎ → `گرافىك`‎ → `گىرافىك`‎).
+- `normalizer/usage_map.tsv` — 543 rules from the 685 توغرىسى entries of [2],
+  built by `tools/build_usage_map.py`. A pair is left out when its wrong form
+  is a headword of [4] or [1] or a word inside one (100, e.g. `ئال`‎ "take",
+  `گۈندە`‎ in `ئارا گۈندە`‎), when it has three letters or fewer (14), or
+  when its correct form is not attested in [4] or [1] even after normalization
+  (27, held for review). 54 rules carry `nosfx` because the wrong form begins
+  a real word. Every rule's correct form is attested in a row of [4] or [1]
+  checked against the scan. `normalizer/usage_map_origin.tsv` records the [2]
+  row of each; `tools/usage_target_overrides.tsv` replaces [2]'s form where it
+  is correct but pre-2009 (`چىڭگىلىماچ`‎ → `جىڭگىلىماچ`‎, [1] D01-12151).
+- `tests/test_lexicon.py` also runs the usage pass over every verified
+  headword; `tests/test_maps.py` applies the map invariants to it.
+- `normalizer/provenance.tsv` gains an `origin` column ([2] row for usage rules);
+  for passes 0–1 the evidence is looked up for the replacement as passes 2–3
+  leave it.
+- README: Pass 0 section; the lexicon test and the rebuild commands under Tests.
+- `tests/test_lexicon.py` — the orthographic passes must leave every verified
+  headword and sub-entry of [4] and [1] unchanged. Hits on unverified rows are
+  reported, not failed: the extraction model was trained on web Uyghur and may
+  have written a web form the book does not print. The calque pass is not
+  tested this way, since it replaces attested words by editorial choice.
+- `tests/data/lexicon_snapshot.tsv.gz` — 125,256 written forms from [4] and
+  [1], 35,852 of them verified, built by `tools/build_lexicon_snapshot.py`.
+- `tests/data/lexicon_exceptions.tsv` — forms printed against an imla rule,
+  each with a verified row and its scan: `تەكىيىسىمان`‎, `تەكىيىلىك`‎,
+  `كاربيۇراتور`‎.
+- `tools/lexicon_review.py` — writes the review queue behind the lexicon test.
+- `normalizer/imla_loan_map.tsv`: `گرېتسىيە`‎ → `گىرېتسىيە`‎
+  (Greece). Only `گرېتسىيەدىكى`‎ and `گىرىتسىيە`‎ were covered, so the
+  bare and most suffixed forms were left alone. Target per the 2011 country
+  table, checked against the scan.
+
+### Changed
+
+- `normalizer/imla_loan_map.tsv`: `سلوۋاكيە`‎ → `سلوۋاكىيە`‎ corrected
+  to `سلوۋاكيە`‎ → `سىلوۋاكىيە`‎ (Slovakia). **This changes output.**
+  The replacement kept the initial cluster that §IX.2 of [4] breaks up; compare
+  `سلوۋاك`‎ → `سىلوۋاك`‎ in the same map. Target per the 2011 country
+  table, checked against the scan.
+
+### Removed
+
+- `normalizer/imla_loan_map.tsv` — 871 rules to 867. **Each of these changes
+  output**: text the rules used to rewrite is now left as written.
+  - `رادىئۇ`‎ → `رادىيو`‎. No dictionary uses `رادىئۇ`‎ for *radio*;
+    every word that begins with it is *radius*, `رادىئۇس`‎ ([4] D_15644,
+    verified). As a stem rule it turned `رادىئۇس`‎ into `رادىيوس`‎.
+  - `رادىيۇ`‎ → `رادىيو`‎, for the same reason. `رادىيۇ`‎ is never
+    *radio* in the dictionaries, and the rule turned `رادىيۇس`‎ (a variant
+    spelling of *radius*) into `رادىيوس`‎.
+  - `ئاستانە`‎ → `ئاستانا`‎. `ئاستانە`‎ is an ordinary word ([4]
+    D_00891, [1] D01-21640, both verified). A Kingston-class collision with the
+    capital `ئاستانا`‎.
+  - `نىئوبىي`‎ → `نىيوبىي`‎ and `پاترىئارخال`‎ → `پاترىيارخال`‎.
+    [1] prints the `ئ`‎ forms (D02-10355, D01-05516, D01-05517, checked
+    against the scans); [4] lists neither word.
+
+### Upgrading
+
+No change to the command line or the map format. Text processed with the
+default passes changes only where a rule under Changed or Removed applies.
+The usage pass is off unless you add `--usage`.
+
 ## [1.1.0] — 2026-08-19
-DOI: [10.5281/zenodo.22011316]
+
 ### Added
 
 - Two map invariants, enforced in CI:

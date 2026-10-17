@@ -8,7 +8,7 @@ maps you already have. Writes nothing to the maps: it emits a clean TSV of the
 rules that are safe to append, and a CSV of everything a human has to decide.
 
     python check_new_rules.py --xlsx era_new_list.xlsx ^
-        --maps normalizer\calque_map.tsv normalizer\era_map.tsv normalizer\imla_loan_map.tsv ^
+        --maps normalizer\usage_map.tsv normalizer\calque_map.tsv normalizer\era_map.tsv normalizer\imla_loan_map.tsv ^
         --out-dir review
 
 By default it reads the first two columns of the first sheet, skipping a header

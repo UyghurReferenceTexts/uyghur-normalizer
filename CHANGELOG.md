@@ -14,6 +14,18 @@ Every entry that touches a map cites the source for the change. See the Sources
 section of the README for the four reference works and their short numbers.
 
 ---
+## [2.0.1] — 2026-10-17
+
+Documentation only. No change to any output.
+
+### Changed
+
+- README: link to the companion dataset uyghur-headword-lists (GitHub and
+  Hugging Face).
+- LICENSE and README: the license split now covers `tools/` (MIT for scripts,
+  CC BY 4.0 for data) and `tests/data/` (CC BY 4.0); fixed the script name.
+- CITATION.cff: abstract wording.
+---
 
 ## [2.0.0] — 2026-10-17
 

@@ -19,7 +19,9 @@ abstract: >-
   is not safe. Includes the map data, arbitrated word by word against the 2009
   Hazirqi zaman Uyghur edebiy tilining imla lughiti dictionary of the Milletler
   Til-Yeziq Komiteti and 2011 Hazirqi zaman Uyghur tilining izahliq lughiti
-  (qisqartilmisi), and tested against every headword of both.
+  (qisqartilmisi), and checked against every headword of both, with
+  hand-verified headwords required to pass unchanged. Every rule is traceable
+  to the dictionary row and scan image that attest it.
 keywords:
   - Uyghur
   - orthography

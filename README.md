@@ -18,6 +18,10 @@ python uyghur_normalizer.py --in text.txt --apply    # write text_fixed.txt
 
 It never edits in place, and by default it writes nothing at all.
 
+**Companion dataset:** [uyghur-headword-lists](https://github.com/UyghurReferenceTexts/uyghur-headword-lists)
+([Hugging Face](https://huggingface.co/datasets/UyghurReferenceTexts/uyghur-headword-lists)), the audited headword lists of the dictionaries
+below. Every map in this repository is checked against them.
+
 ---
 
 ## What it does
@@ -247,7 +251,8 @@ The idempotence test is the one that catches real damage. It is how the Kingston
 collision above was found.
 
 `tests/test_lexicon.py` runs the pipeline over every headword and sub-entry of
-[4] and [1] (`tests/data/lexicon_snapshot.tsv.gz`). Those are already in the
+[4] and [1] (`tests/data/lexicon_snapshot.tsv.gz`, built from
+[uyghur-headword-lists](https://github.com/UyghurReferenceTexts/uyghur-headword-lists)). Those are already in the
 target orthography, so nothing may change. Only rows checked by hand against the
 scan can fail the test: the remaining rows were extracted by a model trained on
 web Uyghur, which may have written a web form the book does not print. Hits on
@@ -353,6 +358,6 @@ cannot tell you if a rule is bad Uyghur.
 
 ## License
 
-Code (`uyghur_normalizer.py`, `check_new_rules.py`, `tests/`): MIT.
+Code (`uyghur_normalizer.py`, `check_new_rules.py`, `tests/*.py`, `tools/*.py`): MIT.
 
-Map data (`normalizer/*.tsv`): CC BY 4.0.
+Data (`normalizer/*.tsv`, `examples/*.tsv`, `tests/data/`, `tools/*.tsv`): CC BY 4.0.

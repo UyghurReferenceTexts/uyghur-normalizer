@@ -1,7 +1,7 @@
 This repository is dual-licensed.
 
-CODE — uyghur_normalize.py, check_new_rules.py, tests/
-------------------------------------------------------
+CODE — uyghur_normalizer.py, check_new_rules.py, tests/*.py, tools/*.py
+------------------------------------------------------------------------
 MIT License
 
 Copyright (c) 2026 UyghurReferenceTexts
@@ -25,8 +25,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-MAP DATA — normalizer/*.tsv, examples/*.tsv
--------------------------------------------
+DATA — normalizer/*.tsv, examples/*.tsv, tests/data/, tools/*.tsv
+------------------------------------------------------------------
 Creative Commons Attribution 4.0 International (CC BY 4.0)
 https://creativecommons.org/licenses/by/4.0/
 

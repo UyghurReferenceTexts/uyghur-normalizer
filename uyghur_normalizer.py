@@ -7,16 +7,21 @@ WHAT IT DOES
 ============
 Applies find-and-replace maps to Uyghur text, in a fixed order, with a log:
 
+    pass 0  usage_map.tsv        OPT-IN: common misuses -> correct form, from the
+                                 توغرىسى entries of the 6-volume izahliq lughet
+                                 (--usage)
     pass 1  calque_map.tsv       terminology  (Chinese calque -> Uyghur term)
     pass 2  era_map.tsv          orthography  (pre-2009 -> 2009 imla)
     pass 3  imla_loan_map.tsv    orthography  (2009/2011 loanword shape)
     pass 4  <your fix map>       OPT-IN: forms a model invents that were never
                                  in its training corpus (--fix-map)
 
-The order is load-bearing: pass-3 inputs are pass-2 outputs, and pass 1 runs
-first so its right-hand sides get normalized by passes 2-3 automatically.
+The order is load-bearing: pass-3 inputs are pass-2 outputs, and passes 0-1
+run first so their right-hand sides get normalized by passes 2-3 automatically.
 
-Passes 1-3 are on by default; each can be switched off. Pass 4 is off unless
+Passes 1-3 are on by default; each can be switched off. Pass 0 is off unless
+you give --usage: it corrects word choice, not spelling, and would also
+"correct" regional or literary forms used on purpose. Pass 4 is off unless
 you point --fix-map at a file.
 
 SUFFIX HANDLING
@@ -84,7 +89,7 @@ import sys
 import unicodedata
 from collections import Counter, OrderedDict
 
-__version__ = '1.1.0'
+__version__ = '2.0.0'
 
 # ---------------------------------------------------------------------------
 # Character classes
@@ -510,6 +515,9 @@ def main():
     ap.add_argument('--out', help='output path (default: <name>_fixed<ext>)')
     ap.add_argument('--normdir', default=os.path.join('.', 'normalizer'),
                     help='folder holding the three default maps')
+    ap.add_argument('--usage', action='store_true',
+                    help='OPT-IN pass 0: common misuses -> correct form (usage_map.tsv)')
+    ap.add_argument('--usage-map', help='override path to usage_map.tsv (implies --usage)')
     ap.add_argument('--calque-map', help='override path to calque_map.tsv')
     ap.add_argument('--era-map', help='override path to era_map.tsv')
     ap.add_argument('--loan-map', help='override path to imla_loan_map.tsv')
@@ -541,6 +549,10 @@ def main():
     def mp(override, name):
         return override or os.path.join(args.normdir, name)
 
+    usage  = load_map(mp(args.usage_map, 'usage_map.tsv'), 'usage') \
+        if (args.usage or args.usage_map) else []
+    if not usage:
+        print('  usage        (off — pass with --usage to enable)')
     calque = [] if args.no_calque else load_map(mp(args.calque_map, 'calque_map.tsv'), 'calque')
     era    = [] if args.no_era    else load_map(mp(args.era_map, 'era_map.tsv'), 'era')
     loan   = [] if args.no_loan   else load_map(mp(args.loan_map, 'imla_loan_map.tsv'), 'imla_loan')
@@ -548,7 +560,7 @@ def main():
     if not args.fix_map:
         print('  model_fix    (off — pass with --fix-map to enable)')
 
-    passes = [build_pattern(r) for r in (calque, era, loan, fix) if r]
+    passes = [build_pattern(r) for r in (usage, calque, era, loan, fix) if r]
     if not passes:
         sys.exit('ERROR: no rules loaded — check --normdir and the --no-* flags.')
 

@@ -5,22 +5,21 @@ type: software
 # Author is an entity with `name:` — Zenodo's CFF parser does not accept
 # a person with only `alias:`, and fails silently (release publishes, no DOI).
 authors:
-  - given-names: UyghurReferenceTexts
-    family-names: East Turkistan
-    orcid: "https://orcid.org/0009-0004-4633-0408"
   - name: UyghurReferenceTexts
     website: "https://github.com/UyghurReferenceTexts"
 repository-code: "https://github.com/UyghurReferenceTexts/uyghur-normalizer"
 abstract: >-
   A dependency-free normalizer for Uyghur text in the Arabic script. Applies
   three ordered passes: terminology calqued from Chinese, pre-2009 spellings,
-  and loanword shape under the 2009 orthographic reform. Suffixes are
+  and loanword shape under the 2009 orthographic reform. An optional pass
+  corrects common misuses of words, from the corrections marked in the
+  6-volume Uyghur edebiy tilining izahliq lughiti (1990-1999). Suffixes are
   re-derived against the replacement with vowel harmony, voicing assimilation
   and raising, and the tool declines rather than guesses where the derivation
   is not safe. Includes the map data, arbitrated word by word against the 2009
   Hazirqi zaman Uyghur edebiy tilining imla lughiti dictionary of the Milletler
   Til-Yeziq Komiteti and 2011 Hazirqi zaman Uyghur tilining izahliq lughiti
-  (qisqartilmisi).
+  (qisqartilmisi), and tested against every headword of both.
 keywords:
   - Uyghur
   - orthography
@@ -32,5 +31,5 @@ keywords:
 license: MIT
 license-url: "https://github.com/UyghurReferenceTexts/uyghur-normalizer/blob/main/LICENSE"
 doi: "10.5281/zenodo.22000836"
-version: 1.1.0
-date-released: "2026-08-19"
+version: 2.0.0
+date-released: "2026-10-17"

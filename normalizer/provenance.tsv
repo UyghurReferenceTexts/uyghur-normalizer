@@ -594,6 +594,40 @@ calque_map.tsv	ئىستىخبارات ئورۇنلىرى	ئىستىخبارات 
 calque_map.tsv	قانۇن ئىجرا قىلىش ئورۇنلىرى	قانۇن ئىجرا قىلىش ئورگانلىرى			none						
 calque_map.tsv	قانۇن ئىجرا قىلغۇچى ئورۇنلار	قانۇن ئىجرا قىلىش ئورگانلىرى			none						
 calque_map.tsv	دۆلەت بىخەتەرلىك ئورۇنلىرى	دۆلەت بىخەتەرلىك ئورگانلىرى			none						
+calque_map.tsv	سىلىڭبۇ	قوماندانلىق شىتابى			stem	قوماندانلىق	2009	D_22433	491_col3.png	no	
+calque_map.tsv	سىلىڭجاڭگۇەن	باش قوماندان			exact	باش قوماندان	2009	D_03285	074_col1.png	yes	
+calque_map.tsv	سىلىڭگۇەن	قوماندان ئوفىتسېر			none						
+calque_map.tsv	سىلىڭيۇەن	قوماندان			exact	قوماندان	2009	D_22432	491_col3.png	yes	
+calque_map.tsv	دايۇەنشۇەي	ئالىي قوماندان			exact	ئالىي قوماندان	2009	D_01634	038_col3.png	yes	
+calque_map.tsv	يۈەنشۇەيلىك	مارشاللىق			exact	مارشاللىق	2009	D_27472	606_col3.png	yes	
+calque_map.tsv	جياڭگۇەن	ھەربىي ئەمەلدار			none						
+calque_map.tsv	جۇڭجياڭ	گېنېرال-لېيتېنانت			none						
+calque_map.tsv	شاڭشياۋ	پولكوۋنىك			stem	پولك	2009	D_06450	139_col2.png	yes	
+calque_map.tsv	جۇڭشياۋ	پودپولكوۋنىك			exact	پودپولكوۋنىك	2009	D_06317	136_col2.png	no	
+calque_map.tsv	داشياۋ	ستارشىي پولكوۋنىك			none						
+calque_map.tsv	شىتۇەن	دىۋىزىيە			none						
+calque_map.tsv	جىيەندۈي	دېڭىز فىلوتى			stem	دېڭىز	2009	D_15340	331_col1.png	yes	
+calque_map.tsv	جۈنۋېي	ھەربىي ئىشلار كومىتېتى			none						
+calque_map.tsv	بەسەيلىك	يېسسىۋېلەكلىك			exact	يېسسىۋېلەكلىك	2009	D_03775	084_col3.png	yes	
+calque_map.tsv	بەسەي	يېسسىۋېلەك			exact	يېسسىۋېلەك	2009	D_03774	084_col3.png	yes	
+calque_map.tsv	چىڭسەي	يېشىللۈك			stem	يېشىل	2009	D_36981	829_col1.png	yes	
+calque_map.tsv	جۈسەي	كۈدە			exact	كۈدە	2009	D_11613	253_col3.png	yes	
+calque_map.tsv	چەيزە	پىدىگەن			exact	پىدىگەن	2011	D01-07199	232_1R.png	yes	
+calque_map.tsv	چەيدو	بەكە			exact	بەكە	2009	D_03802	085_col1.png	yes	
+calque_map.tsv	موگۇ	قوزىقارنى			exact	قوزىقارنى	2009	D_22244	485_col1.png	no	
+calque_map.tsv	خاسىڭ	يەر ياڭىقى			exact	يەر ياڭىقى	2011	D02-17347	1344_1R.png	yes	
+calque_map.tsv	ئوسۇڭ	غولكۆك			exact	غولكۆك	2009	D_20403	441_col3.png	no	
+calque_map.tsv	ياڭيۇ	بەرەڭگى			exact	بەرەڭگى	2009	D_03719	083_col2.png	yes	
+calque_map.tsv	جاڭدۇ	باقلا			exact	باقلا	2009	D_03423	077_col3.png	yes	
+calque_map.tsv	جياڭيۇ	سويا سۈيى			stem	سويا	2011	D01-18963	619_1R.png	yes	
+calque_map.tsv	سۇلياۋ	پىلاستىكا			exact	پىلاستىكا	2009	D_07223	155_col2.png	no	
+calque_map.tsv	مېيخۇا	چىللىگۈل			exact	چىللىگۈل	2011	D02-09018	1026_2L.png	yes	
+calque_map.tsv	شاڭجاۋ	بانان			exact	بانان	2009	D_03552	080_col2.png	yes	
+calque_map.tsv	ساۋمېي	بۆلجۈرگەن			exact	بۆلجۈرگەن	2009	D_04627	101_col1.png	yes	
+calque_map.tsv	تۇخاۋ-لېيشېن	پومېشچىك ۋە زومىگەر			none						
+calque_map.tsv	مەنچىڭ	چىڭ سۇلالىسى			none						
+calque_map.tsv	دۇنخۇاڭ	دۇھان			none						
+calque_map.tsv	شىياڭگاڭ	خوڭكوڭ			none						
 era_map.tsv	ئېكىسپېدىتسىيىچىلىرى	ئېكىسپېدىتسىيەچىلىرى			none						
 era_map.tsv	ئىسرائىلىيىلىكلەرنىڭ	ئىسرائىلىيەلىكلەرنىڭ			none						
 era_map.tsv	دېموكراتىيىلىشىشىنى	دېموكراتىيەلىشىشىنى			stem	دېموكراتىيەلىشىش	2009	D_15361	332_col1.png	no	

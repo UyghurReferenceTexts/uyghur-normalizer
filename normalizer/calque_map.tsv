@@ -8,10 +8,13 @@
 # only. Inflected forms are needed ONLY where suffix concatenation gives the
 # wrong result — those are marked EXPLICIT below.
 #
-# 38 rules.  Sources: hand-seeded + calque_pinyin_miner over the xjhengying
-# CN-UG law corpus + XJ government work reports.
+# 85 rules.  Sources: hand-seeded (incl. the web) + calque_pinyin_miner over
+# prc-laws-bilingual and prc-primary-documents (51); 34 added on 2026-10-18
+# from the dictionaries, each with its evidence row in a comment above it
+# ([4] imla 2009 = / [1] izahliq 2011 ← / [2] izahliq 1990s ← cross-references,
+# or the definition of a [خەن] entry), reviewed against the scans.
 
-# ---- ethnonyms or language names ----
+# ---- ethnonyms / language names ----
 خەنزۇچە	خىتايچە
 خەنزۇ	خىتاي
 پۇتۇڭخۇا	خىتاي تىلى
@@ -38,7 +41,7 @@
 بەنزە	تەشكىل
 پەيچۇسو	ئامانلىق ساقلاش پونكىتى
 
-# ---- civil or party titles ----
+# ---- civil / party titles ----
 زۇڭتۇڭ	پىرېزىدېنت
 زۇڭلى	باش مىنىستىر
 شۇجى	باش كاتىپ
@@ -95,3 +98,79 @@
 # NotebookLM-confirmed variant: ئورۇن = physical workplace; state apparatus takes ئورگان
 قانۇن ئىجرا قىلغۇچى ئورۇنلار	قانۇن ئىجرا قىلىش ئورگانلىرى
 دۆلەت بىخەتەرلىك ئورۇنلىرى	دۆلەت بىخەتەرلىك ئورگانلىرى
+
+# ==== 2026-10-18: from the dictionaries (34 rules) ====
+
+# ---- military ranks, units and organs ----
+# [2] D90-3-07010; [1] D01-19904
+سىلىڭبۇ	قوماندانلىق شىتابى
+# [4] D_18950
+سىلىڭجاڭگۇەن	باش قوماندان
+# [4] D_18951
+سىلىڭگۇەن	قوماندان ئوفىتسېر
+# [4] D_18953; [2] D90-3-07012
+سىلىڭيۇەن	قوماندان
+# [4] D_14579; [1] D01-15399
+دايۇەنشۇەي	ئالىي قوماندان
+# [4] D_27472
+يۈەنشۇەيلىك	مارشاللىق
+# [1] D01-12266; [4] D_11893
+جياڭگۇەن	ھەربىي ئەمەلدار
+# [1] D01-11860
+جۇڭجياڭ	گېنېرال-لېيتېنانت
+# [4] D_06452
+شاڭشياۋ	پولكوۋنىك
+# [4] D_06317
+جۇڭشياۋ	پودپولكوۋنىك
+# [2] D90-3-05082; passes 2-3 give ئىستارشىي, as [1] D02-15598
+داشياۋ	ستارشىي پولكوۋنىك
+# [2] D90-3-08315; [4] D_19881
+شىتۇەن	دىۋىزىيە
+# [4] D_11903
+جىيەندۈي	دېڭىز فىلوتى
+# [1] D01-12007
+جۈنۋېي	ھەربىي ئىشلار كومىتېتى
+
+# ---- food, plants and household ----
+# [4] D_03775
+بەسەيلىك	يېسسىۋېلەكلىك
+# [4] D_03774; [1] D01-03900
+بەسەي	يېسسىۋېلەك
+# [4] D_13425
+چىڭسەي	يېشىللۈك
+# [4] D_11613; [2] D90-2-05957
+جۈسەي	كۈدە
+# [4] D_06988; [1] D01-07199
+چەيزە	پىدىگەن
+# [2] D90-2-07096; [1] D01-12967
+چەيدو	بەكە
+# [4] D_28409
+موگۇ	قوزىقارنى
+# [1] D02-17347
+خاسىڭ	يەر ياڭىقى
+# [4] D_31441
+ئوسۇڭ	غولكۆك
+# [1] D02-17017 (definition); target spelled as [4] D_03719
+ياڭيۇ	بەرەڭگى
+# [1] D01-11408 (definition)
+جاڭدۇ	باقلا
+# [2] D90-2-06292 (definition)
+جياڭيۇ	سويا سۈيى
+# [2] D90-3-05839 (definition)
+سۇلياۋ	پىلاستىكا
+# [2] D90-5-03000
+مېيخۇا	چىللىگۈل
+# reviewer; primary-school textbook fruit list, seen in a Douyin video, Oct 2026
+شاڭجاۋ	بانان
+# reviewer; primary-school textbook fruit list, seen in a Douyin video, Oct 2026
+ساۋمېي	بۆلجۈرگەن
+
+# ---- society, history and places ----
+# [2] D90-2-03080; [1] D01-09782
+تۇخاۋ-لېيشېن	پومېشچىك ۋە زومىگەر
+# [2] D90-5-01452
+مەنچىڭ	چىڭ سۇلالىسى
+# reviewer; [4] D_15130 lists دۇنخۇاڭ, no dictionary has دۇھان
+دۇنخۇاڭ	دۇھان
+# reviewer; variant of شياڭگاڭ above
+شىياڭگاڭ	خوڭكوڭ

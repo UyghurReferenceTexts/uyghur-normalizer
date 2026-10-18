@@ -57,8 +57,9 @@ the rule prose carry transcription noise and were not used as evidence.
 
 The explanatory dictionaries [1] and [2] are used to arbitrate and to confirm
 that a form is actually attested. The 2006 Uyghur–Chinese dictionary [3] is the
-opposite kind of source: it documents the *older* spellings, so it supplies the
-left-hand side of a rule, never the right.
+opposite kind of source: its table of countries, capitals and currencies records
+the *older* spellings of those names, so it supplies the left-hand side of a
+rule, never the right. Its headwords have not been used.
 
 The target is the **codified 2009 standard**, not contemporary web or diaspora
 usage. The clearest case is the `ـىيە` class: this tool produces
@@ -178,7 +179,7 @@ python uyghur_normalizer.py --in output.txt --fix-map my_fixes.tsv --apply
 ```
 
 There is no default path, and no map of this kind ships enabled. These rules
-describe one model, not the language. `examples/output_fix_map.example.tsv`
+describe one model, not the language. `examples/output_fix_map.examples.tsv`
 shows the shape and the level of evidence expected — every rule cites the
 checkpoint and the measured cost. Yours will be different, because your base
 model is different.
@@ -294,7 +295,8 @@ a rule that has never fired is dormant, not wrong.
 
 ## Sources
 
-Every rule in this repository is traceable to one of these four books.
+The spelling rules (passes 0, 2 and 3) are traceable to these four books. The
+terminology rules of pass 1 come from the corpora listed after them.
 
 **[1]** ھازىرقى زامان ئۇيغۇر تىلىنىڭ ئىزاھلىق لۇغىتى (قىسقارتىلمىسى)
 *Hazirqi zaman Uyghur tilining izahliq lughiti (qisqartilmisi)*.
@@ -318,9 +320,10 @@ ISBN 7-105-00928-4 (vol. 1, 1990); 7-105-01431-8 (vol. 2, 1991);
 *Uyghurche–Xenzuche lughet*.
 Sh.U.A.R. Milletler Til-Yéziq Xizmiti Komitéti (comp.); responsible editor
 Yaqup Muhemmetrozi. Milletler Neshriyati, Beijing, 2006. ISBN 7-105-07803-0.
-→ Source of pre-reform spellings — the left-hand side of a rule. The country
-and capital names added to `imla_loan_map.tsv` were aligned from this edition
-against [4].
+→ Its table of countries, capitals and currencies only: the pre-reform
+spellings on the left-hand side of the country and capital rules in
+`imla_loan_map.tsv`, aligned against [4]. The dictionary's headwords have not
+been extracted or used.
 
 **[4]** ھازىرقى زامان ئۇيغۇر ئەدەبىي تىلىنىڭ ئىملا لۇغىتى (ئىملا ۋە تەلەپپۇز قائىدىسى)
 *Hazirqi zaman Uyghur edebiy tilining imla lughiti (imla we teleppuz qa'idisi)*.
@@ -333,6 +336,13 @@ section of this book, not a separate work.
 
 None of these are distributed here. They are in print, and a correction is far
 easier to act on if it cites one of them by page.
+
+**Corpora.** The terminology of `calque_map.tsv` (pass 1) does not come from
+[3]. Its first rules were mined from the parallel Chinese–Uyghur law texts of
+[prc-laws-bilingual](https://github.com/UyghurReferenceTexts/prc-laws-bilingual). A few were added during the audit of [1], [2] and
+[4], from [prc-primary-documents](https://github.com/UyghurReferenceTexts/prc-primary-documents) and from the web. The rules added on
+2026-10-18 rest on cross-references and [خەن] entries in [1], [2] and [4]; the
+evidence row of each is given in a comment above it.
 
 ---
 

@@ -9,7 +9,7 @@ authors:
     website: "https://github.com/UyghurReferenceTexts"
 repository-code: "https://github.com/UyghurReferenceTexts/uyghur-normalizer"
 abstract: >-
-  A dependency-free normalizer for Uyghur text in the Arabic script. Applies
+  A dependency-free normalizer for Uyghur text in the Uyghur (ئۇيغۇر) script. Applies
   three ordered passes: terminology calqued from Chinese, pre-2009 spellings,
   and loanword shape under the 2009 orthographic reform. An optional pass
   corrects common misuses of words, from the corrections marked in the
@@ -33,5 +33,5 @@ keywords:
 license: MIT
 license-url: "https://github.com/UyghurReferenceTexts/uyghur-normalizer/blob/main/LICENSE"
 doi: "10.5281/zenodo.22000836"
-version: 2.0.1
-date-released: "2026-10-17"
+version: 2.1.0
+date-released: "2026-10-18"

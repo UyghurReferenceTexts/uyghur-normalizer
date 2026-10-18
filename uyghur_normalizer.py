@@ -89,7 +89,7 @@ import sys
 import unicodedata
 from collections import Counter, OrderedDict
 
-__version__ = '2.0.0'
+__version__ = '2.1.0'
 
 # ---------------------------------------------------------------------------
 # Character classes

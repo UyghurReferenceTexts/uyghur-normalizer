@@ -33,5 +33,5 @@ keywords:
 license: MIT
 license-url: "https://github.com/UyghurReferenceTexts/uyghur-normalizer/blob/main/LICENSE"
 doi: "10.5281/zenodo.22000836"
-version: 2.1.0
-date-released: "2026-10-18"
+version: 3.0.0
+date-released: "2026-10-23"

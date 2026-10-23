@@ -8,9 +8,9 @@
 # only. Inflected forms are needed ONLY where suffix concatenation gives the
 # wrong result — those are marked EXPLICIT below.
 #
-# 85 rules.  Sources: hand-seeded (incl. the web) + calque_pinyin_miner over
+# 107 rules.  Sources: hand-seeded (incl. the web) + calque_pinyin_miner over
 # prc-laws-bilingual and prc-primary-documents (51); 34 added on 2026-10-18
-# from the dictionaries, each with its evidence row in a comment above it
+# and 22 on 2026-10-23 from the dictionaries, each with its evidence row in a comment above it
 # ([4] imla 2009 = / [1] izahliq 2011 ← / [2] izahliq 1990s ← cross-references,
 # or the definition of a [خەن] entry), reviewed against the scans.
 
@@ -52,9 +52,10 @@
 جۈنشىنجاڭ	باش سېرژانت
 جۈنشجاڭ	باش سېرژانت
 شاڭجياڭ	ئالىي گېنېرال
+# 2026-10-23: لېيتېنانت corrected to لېيتېنات, as printed in [2] D90-4-10128 and [1] D01-11860
 شاڭۋېي	كاپىتان
-جۇڭۋېي	لېيتېنانت
-شاۋۋېي	كىچىك لېيتېنانت
+جۇڭۋېي	لېيتېنات
+شاۋۋېي	كىچىك لېيتېنات
 شاڭشى	يۇقىرى سېرژانت
 جۇڭشى	ئوتتۇرا سېرژانت
 جۈنشى	سېرژانت
@@ -116,8 +117,8 @@
 يۈەنشۇەيلىك	مارشاللىق
 # [1] D01-12266; [4] D_11893
 جياڭگۇەن	ھەربىي ئەمەلدار
-# [1] D01-11860
-جۇڭجياڭ	گېنېرال-لېيتېنانت
+# [1] D01-11860 (target corrected 2026-10-23 to the printed گېنېرال لېيتېنات)
+جۇڭجياڭ	گېنېرال لېيتېنات
 # [4] D_06452
 شاڭشياۋ	پولكوۋنىك
 # [4] D_06317
@@ -136,8 +137,8 @@
 بەسەيلىك	يېسسىۋېلەكلىك
 # [4] D_03774; [1] D01-03900
 بەسەي	يېسسىۋېلەك
-# [4] D_13425
-چىڭسەي	يېشىللۈك
+# [4] D_13425 (target corrected 2026-10-23: يېشىللۈك was an OCR misspelling)
+چىڭسەي	يېشىلكۆك
 # [4] D_11613; [2] D90-2-05957
 جۈسەي	كۈدە
 # [4] D_06988; [1] D01-07199
@@ -174,3 +175,57 @@
 دۇنخۇاڭ	دۇھان
 # reviewer; variant of شياڭگاڭ above
 شىياڭگاڭ	خوڭكوڭ
+
+# ==== 2026-10-23: from the dictionaries (22 rules) ====
+
+# ---- military ranks and units ----
+# [4] D_11894
+جياڭلىڭ	ھەربىي قوماندان
+# [4] D_11682
+جىتۇەنجۈن	ئارمىيە گۇرۇپپىسى
+# [4] D_11634; target [4] D_24416
+جۈنتۈەن	كورپۇس
+# [1] D01-12004, the spelling printed there; target [4] D_24416
+جۈنتۇەن	كورپۇس
+# [4] D_11635; target [4] D_24416
+جۈنجاڭ	كورپۇس كوماندىرى
+# [4] D_11686
+جىداۋيۈەن	يېتەكچى
+
+# ---- Korea: the state is شىمالىي كورېيە; Korea in general (peninsula, language, script, people, war, plants) is كورېيە ----
+# [4] D_12363; [1] D01-12777; the PRC country tables of 2006 and 2011 use it for North Korea
+چاۋشيەن	شىمالىي كورېيە
+# reviewer
+چاۋشيەن يېرىم ئارىلى	كورېيە يېرىم ئارىلى
+# [2] D90-2-06878
+چاۋشيەن تىلى	كورېيە تىلى
+# [4] D_12364
+چاۋشيەنچە	كورېيەچە
+# raised stem of چاۋشيەنچە before a suffix (چاۋشيەنچىدە)
+چاۋشيەنچى	كورېيەچى
+# [4] D_12363 (sub-entry)
+چاۋشيەن يېزىقى	كورېيە يېزىقى
+# reviewer
+چاۋشيەن مىللىتى	كورېيە مىللىتى
+# reviewer
+چاۋشيەن ئۇرۇشى	كورېيە ئۇرۇشى
+# [4] D_12365; [1] D01-12779
+چاۋشيەنشۇناس	كورېيەشۇناس
+# [4] D_12363 (sub-entry)
+چاۋشيەن سۆگىتى	كورېيە سۆگىتى
+# [2] D90-2-06879
+چاۋشيەن مالىنىسى	كورېيە مالىنىسى
+# [2] D90-2-06880; [1] D01-12778 (朝鲜族); target: reviewer
+چاۋشيەنزۇ	كورېيەلىك
+
+# ---- food and plants ----
+# [4] D_07416; target spelled as [4] D_03719
+تاتلىقياڭيۇ	تاتلىق بەرەڭگى
+# [1] D01-16007; target [4] D_06577 (sub-entry)
+دۇفۇ	پۇرچاق ئۇيۇتمىسى
+
+# ---- other ----
+# 办公厅, as against 办公室 = ئىشخانا ([4] D_34884); reviewer. raise: باش ئىشخانىسى, باش ئىشخانىدا
+بەنگۇڭتىڭ	باش ئىشخانا	raise
+# [4] D_07210; target [1] D02-05242
+پىڭفاڭ	كىۋادرات

@@ -1,5 +1,7 @@
 # uyghur-normalizer
 
+Release 3.0.0 (2026-10-23).
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22000836.svg)](https://doi.org/10.5281/zenodo.22000836)
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/UyghurReferenceTexts/uyghur-normalizer/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/UyghurReferenceTexts/uyghur-normalizer)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0004--4633--0408-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0004-4633-0408)
@@ -9,7 +11,7 @@
 Normalizes Uyghur (ئۇيغۇر) text to the 2009 orthographic standard,
 and replaces terminology calqued from Chinese with Uyghur equivalents.
 
-Two files, no dependencies, no network. Python 3.9+.
+No dependencies and no network. Python 3.9+.
 
 ```bash
 python uyghur_normalizer.py --in text.txt            # scan: report only

@@ -15,9 +15,47 @@ section of the README for the four reference works and their short numbers.
 
 \---
 
+## \[3.0.0] — 2026-10-23
+
+MAJOR because rule targets changed (see Fixed): text those rules rewrote under
+the previous release now comes out differently.
+
+### Added
+
+- `normalizer/calque_map.tsv` — 22 rules (85 to 107), from [4], [1] and [2],
+  reviewed against the scans; the evidence row of each is in a comment above it.
+  Military ranks and units (`جياڭلىڭ`‎ → `ھەربىي قوماندان`‎,
+  `جۈنتۈەن`‎ → `كورپۇس`‎; [4] and [1] print the latter as
+  `جۈنتۇەن`‎, so both forms are covered), food (`دۇفۇ`‎ →
+  `پۇرچاق ئۇيۇتمىسى`‎, `تاتلىقياڭيۇ`‎ → `تاتلىق بەرەڭگى`‎) and
+  `پىڭفاڭ`‎ → `كىۋادرات`‎.
+- Korea. `چاۋشيەن`‎, the name the PRC country tables use for North Korea,
+  becomes `شىمالىي كورېيە`‎; Korea in general becomes `كورېيە`‎:
+  `چاۋشيەن يېرىم ئارىلى`‎, `چاۋشيەن تىلى`‎, `چاۋشيەنچە`‎,
+  `چاۋشيەن يېزىقى`‎, `چاۋشيەن مىللىتى`‎, `چاۋشيەن ئۇرۇشى`‎,
+  `چاۋشيەنشۇناس`‎ and two plant names. `چاۋشيەنچى`‎ covers the raised
+  stem (`چاۋشيەنچىدە`‎ → `كورېيەچىدە`‎), and `چاۋشيەنزۇ`‎ (朝鲜族) becomes
+  `كورېيەلىك`‎.
+- `بەنگۇڭتىڭ`‎ (办公厅) → `باش ئىشخانا`‎, as against 办公室 = `ئىشخانا`‎;
+  flagged `raise`, so `بەنگۇڭتىڭى`‎ → `باش ئىشخانىسى`‎.
+
+### Fixed
+
+- `normalizer/calque_map.tsv`: targets that were transcription errors.
+  **These change output.**
+  - `چىڭسەي`‎ → `يېشىللۈك`‎ corrected to → `يېشىلكۆك`‎ ([4] D_13425).
+  - `لېيتېنانت`‎ corrected to `لېيتېنات`‎, as printed in [2]
+    D90-4-10128 and [1] D01-11860, in `جۇڭۋېي`‎ → `لېيتېنات`‎,
+    `شاۋۋېي`‎ → `كىچىك لېيتېنات`‎ and `جۇڭجياڭ`‎ →
+    `گېنېرال لېيتېنات`‎ (previously hyphenated).
+
+### Changed
+
+- `tests/data/lexicon_snapshot.tsv.gz` rebuilt from the current headword
+  lists: 49,614 verified forms (was 36,433).
+- `normalizer/provenance.tsv` regenerated.
+
 ## \[2.1.0] — 2026-10-18
-
-
 
 ### Added
 
@@ -148,7 +186,7 @@ The usage pass is off unless you add `--usage`.
 * Two map invariants, enforced in CI:
 
   * a replacement may not begin with its own variant unless the rule carries
-`nosfx`;
+  `nosfx`;
   * a variant may not start with a character that cannot begin a Uyghur word.
 * `check\\\_new\\\_rules.py` reports the same two conditions as `PREFIX` and
 `UNFIREABLE`.
@@ -209,13 +247,13 @@ maps and against itself before anything is appended.
 `ىيە` standard. 163 confirmed directly against \[4], 1,082 by class rule,
 5 exceptions recorded where \[4] mapped toward `ى`.
 * `normalizer/imla\\\_loan\\\_map.tsv` — 873 rules. Loanword shape per the rule prose
-of \[4] §V.3 (hiatus) and §IX.2.1–4 (initial clusters), arbitrated word by word
-against \[1] and \[2]. The example word lists inside the rule prose carry
-transcription noise and were not used as evidence.
+  of \[4] §V.3 (hiatus) and §IX.2.1–4 (initial clusters), arbitrated word by word
+  against \[1] and \[2]. The example word lists inside the rule prose carry
+  transcription noise and were not used as evidence.
 
   * 769 rules in the initial build.
   * 95 country, capital and language names added 2026-08-17, aligned from \[3]
-against \[4].
+  against \[4].
   * 9 loanword forms added 2026-08-18.
 * `tests/test\\\_suffix.py`, `tests/test\\\_maps.py` — 46 tests. Map invariants and
 pipeline idempotence run in CI on every push.
